@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace = "nl.calips.autolinklibraryexampleapp"
+    namespace = "nl.calips.autolinklibrary_app"
     buildFeatures {
         viewBinding true
     }
     defaultConfig {
-        applicationId "io.github.armcha"
-        minSdkVersion 16
-        targetSdkVersion 33
+        applicationId 'nl.calips.autolinklibrary'
+        minSdkVersion 21
+        targetSdkVersion 34
+        compileSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,16 +26,16 @@ android {
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.6.0', {
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.6.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation project(':autolinklibrary')
-    testImplementation 'junit:junit:4.12'
-    implementation 'androidx.core:core-ktx:+'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.core:core-ktx:1.13.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.cardview:cardview:1.0.0'
 }
 repositories {

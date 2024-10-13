@@ -1,4 +1,4 @@
-package io.github.armcha
+package nl.calips.autolinklibrary_app
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import io.github.armcha.autolink.*
 import kotlinx.android.synthetic.main.activity_static_text.*
+import nl.calips.autolinklibrary.MODE_CUSTOM
+import nl.calips.autolinklibrary.MODE_EMAIL
+import nl.calips.autolinklibrary.MODE_HASHTAG
+import nl.calips.autolinklibrary.MODE_MENTION
+import nl.calips.autolinklibrary.MODE_PHONE
+import nl.calips.autolinklibrary.MODE_URL
 
 class StaticTextActivity : AppCompatActivity() {
 
@@ -23,7 +29,8 @@ class StaticTextActivity : AppCompatActivity() {
                 MODE_URL,
                 MODE_PHONE,
                 custom,
-                MODE_MENTION)
+                MODE_MENTION
+        )
 
         autoLinkTextView.addUrlTransformations(
                 "https://en.wikipedia.org/wiki/Wear_OS" to "Wear OS",

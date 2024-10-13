@@ -1,4 +1,4 @@
-package io.github.armcha
+package nl.calips.autolinklibrary_app
 
 import android.content.Context
 import android.content.Intent

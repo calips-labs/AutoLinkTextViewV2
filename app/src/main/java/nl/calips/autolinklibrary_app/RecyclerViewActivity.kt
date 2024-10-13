@@ -1,4 +1,4 @@
-package io.github.armcha
+package nl.calips.autolinklibrary_app
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -8,13 +8,18 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import io.github.armcha.autolink.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import kotlinx.android.synthetic.main.recycler_item.view.*
+import nl.calips.autolinklibrary.MODE_CUSTOM
+import nl.calips.autolinklibrary.MODE_EMAIL
+import nl.calips.autolinklibrary.MODE_HASHTAG
+import nl.calips.autolinklibrary.MODE_MENTION
+import nl.calips.autolinklibrary.MODE_PHONE
+import nl.calips.autolinklibrary.MODE_URL
 
 
 class RecyclerViewActivity : AppCompatActivity() {
@@ -44,7 +49,8 @@ class RecyclerViewActivity : AppCompatActivity() {
                         MODE_PHONE,
                         MODE_EMAIL,
                         custom,
-                        MODE_MENTION)
+                        MODE_MENTION
+                )
 
                 autoLinkTextView.addUrlTransformations(
                         "https://google.com" to "Google",
