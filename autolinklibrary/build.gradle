@@ -1,3 +1,9 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
+plugins {
+    id "com.vanniktech.maven.publish" version "0.30.0"
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
@@ -16,6 +22,39 @@ android {
             tasks.withType(Javadoc).all { enabled = false }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+
+    coordinates("nl.calips.autolinklibrary", "autolink-library", "0.0.1")
+
+    pom {
+        name = "AutoLinkTextViewV2 library"
+        description = "An adopted version of the original AutoLinkTextViewV2 library."
+        inceptionYear = "2024"
+        url = "https://github.com/calips-labs/AutoLinkTextViewV2/"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "calips-labs"
+                name = "Calips"
+                url = "https://github.com/calips-labs/"
+            }
+        }
+        scm {
+            url = "https://github.com/calips-labs/AutoLinkTextViewV2/"
+            connection = "scm:git:git://github.com/calips-labs/AutoLinkTextViewV2.git"
+            developerConnection = "scm:git:ssh://git@github.com/calips-labs/AutoLinkTextViewV2.git"
         }
     }
 }
