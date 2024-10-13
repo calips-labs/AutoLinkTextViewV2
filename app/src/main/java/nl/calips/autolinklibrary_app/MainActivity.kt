@@ -6,22 +6,26 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import nl.calips.autolinklibrary_app.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
 
-        staticTextButton.setOnClickListener {
+        setContentView(view)
+
+        binding.staticTextButton.setOnClickListener {
             startActivity(Intent(this, StaticTextActivity::class.java))
         }
-        recyclerViewButton.setOnClickListener {
+        binding.recyclerViewButton.setOnClickListener {
             startActivity(Intent(this, RecyclerViewActivity::class.java))
         }
-        githubIcon.setOnClickListener {
+        binding.githubIcon.setOnClickListener {
             browse("https://github.com/armcha/AutoLinkTextViewV2")
         }
     }
