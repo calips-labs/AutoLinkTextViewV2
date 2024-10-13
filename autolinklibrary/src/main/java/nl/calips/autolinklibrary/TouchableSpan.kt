@@ -1,4 +1,4 @@
-package io.github.armcha.autolink
+package nl.calips.autolinklibrary
 
 import android.graphics.Color
 import android.text.TextPaint

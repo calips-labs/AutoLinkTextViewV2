@@ -1,20 +1,13 @@
-package io.github.armcha.autolink
+package nl.calips.autolinklibrary
 
 import android.content.Context
 import android.graphics.Color
-import android.graphics.Typeface
-import android.graphics.Typeface.BOLD
-import android.os.Handler
 import android.text.DynamicLayout
 import android.text.SpannableString
 import android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-import android.text.Spanned.SPAN_INCLUSIVE_INCLUSIVE
 import android.text.StaticLayout
 import android.text.style.CharacterStyle
-import android.text.style.ClickableSpan
-import android.text.style.StyleSpan
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import java.lang.reflect.Field

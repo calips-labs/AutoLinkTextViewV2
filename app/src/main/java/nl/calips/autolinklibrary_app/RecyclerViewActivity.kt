@@ -1,4 +1,4 @@
-package io.github.armcha
+package nl.calips.autolinklibrary_app
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -8,33 +8,44 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import io.github.armcha.autolink.*
-import kotlinx.android.synthetic.main.activity_recycler_view.*
-import kotlinx.android.synthetic.main.recycler_item.view.*
+import nl.calips.autolinklibrary.*
+import nl.calips.autolinklibrary.MODE_CUSTOM
+import nl.calips.autolinklibrary.MODE_EMAIL
+import nl.calips.autolinklibrary.MODE_HASHTAG
+import nl.calips.autolinklibrary.MODE_MENTION
+import nl.calips.autolinklibrary.MODE_PHONE
+import nl.calips.autolinklibrary.MODE_URL
+import nl.calips.autolinklibrary_app.databinding.ActivityRecyclerViewBinding
+import nl.calips.autolinklibrary_app.databinding.RecyclerItemBinding
 
 
 class RecyclerViewActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRecyclerViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_view)
+        binding = ActivityRecyclerViewBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        recyclerView.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        binding.recyclerView.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+            private lateinit var viewHolderBinding: RecyclerItemBinding
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-                val view = layoutInflater.inflate(R.layout.recycler_item, parent, false)
-                return object : RecyclerView.ViewHolder(view) {}
+                viewHolderBinding = RecyclerItemBinding.inflate(layoutInflater, parent, false)
+                val holderView = viewHolderBinding.root
+
+                return object : RecyclerView.ViewHolder(holderView) {}
             }
 
             override fun getItemCount() = 200
 
             override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-                val autoLinkTextView = holder.itemView.autoLinkTextView
+                val autoLinkTextView = viewHolderBinding.autoLinkTextView
                 val context = holder.itemView.context
                 val custom = MODE_CUSTOM("\\sAndroid\\b")
 
@@ -44,7 +55,8 @@ class RecyclerViewActivity : AppCompatActivity() {
                         MODE_PHONE,
                         MODE_EMAIL,
                         custom,
-                        MODE_MENTION)
+                        MODE_MENTION
+                )
 
                 autoLinkTextView.addUrlTransformations(
                         "https://google.com" to "Google",

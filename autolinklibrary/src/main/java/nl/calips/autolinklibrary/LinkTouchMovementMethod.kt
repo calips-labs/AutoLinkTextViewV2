@@ -1,4 +1,4 @@
-package io.github.armcha.autolink
+package nl.calips.autolinklibrary
 
 import android.text.Selection
 import android.text.Spannable

@@ -1,4 +1,4 @@
-package io.github.armcha.autolink
+package nl.calips.autolinklibrary
 
 import android.util.Patterns
 import java.util.regex.Pattern
