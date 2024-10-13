@@ -1,12 +1,20 @@
 # AutoLinkTextView V2
 
-[1]: https://github.com/armcha/AutoLinkTextView
-AutoLinkTextViewV2 is the new version of the [AutoLinkTextView][1].
+This is an adopted version of the [AutoLinkTextViewV2][1] library created by [Arman Chatikyan][2].
 
-**The main differences between the old and new version are**
-- Fully migration to Kotlin
-- Added several new features
-- Some improvements and fixes
+[1]: https://github.com/armcha/AutoLinkTextViewV2
+[2]: https://github.com/armcha/
+
+Unlike the original library, this version is published on Maven Central and can be easily included in your project using Gradle.
+
+### Changes in this version
+
+- Minimum SDK version is now 21
+- Updated dependencies
+- New namespace for the library: `nl.calips.autolinklibrary`
+- Example app is updated to use the new namespace and uses view binding instead of Kotlin synthetics
+
+## Functionality
 
 **It supports automatic detection and click handling for**
 * Hashtags (#)
@@ -19,10 +27,7 @@ AutoLinkTextViewV2 is the new version of the [AutoLinkTextView][1].
 .<img src="screens/static.png" width="400">
 <img src="screens/static_gif.gif" width="400">
 
-The current minSDK version is API level 16.
-
-### Download sample [apk][77]
-[77]: https://github.com/armcha/AutoLinkTextViewV2/blob/master/screens/AutoLinkTextView.apk
+The current minSDK version is API level 21.
 
 ### Features
 
@@ -39,14 +44,14 @@ The current minSDK version is API level 16.
 
 Gradle:
 ```groovy
-implementation 'com.github.armcha:AutoLinkTextViewV2:3.0.0'
+implementation 'nl.calips:autolinklibrary:1.0.0'
 ```
 
 ### Setup and Usage
 
 Add AutoLinkTextView to your layout
 ```xml
-<io.github.armcha.autolink.AutoLinkTextView
+<nl.calips.autolinklibrary.AutoLinkTextView
     android:id="@+id/autolinkTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
@@ -147,7 +152,7 @@ You can also change pressed text color
 autoLinkTextView.pressedTextColor = ContextCompat.getColor(this, R.color.pressedTextColor)
 ```
 
-### Contact :book:
+### Contact the original author :book:
 
 :arrow_forward:  **Email**: chatikyana@gmail.com
 
@@ -163,6 +168,7 @@ License
 
       Auto Link TextView V2 library for Android
       Copyright (c) 2021 Arman Chatikyan (https://github.com/armcha/AutoLinkTextViewV2).
+      Additional changes by Geert Wirken (c) 2024.
 
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
