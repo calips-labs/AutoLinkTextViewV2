@@ -30,7 +30,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
 
-    coordinates("nl.calips.autolinklibrary", "autolink-library", "0.0.1")
+    coordinates("nl.calips.autolinklibrary", "autolink-library", "1.0.0")
 
     pom {
         name = "AutoLinkTextViewV2 library"

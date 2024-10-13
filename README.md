@@ -44,7 +44,7 @@ The current minSDK version is API level 21.
 
 Gradle:
 ```groovy
-implementation 'nl.calips:autolinklibrary:1.0.0'
+implementation 'implementation 'nl.calips.autolinklibrary:autolink-library:1.0.0
 ```
 
 ### Setup and Usage
